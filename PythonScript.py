@@ -31,7 +31,7 @@ import win32clipboard
 import TcpTaskerEventPy as Sender
 
 key="putyourPassword"
-ipadr=""192.168.1.254:8080"
+ipadr="192.168.1.254:8080"
 verific=True
 message="GIVE_METEXT"
 Sender.sendmsgENCODED (ipadr,message,key,verific)
