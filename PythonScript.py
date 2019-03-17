@@ -4,8 +4,9 @@ import win32clipboard
 import TcpTaskerEventPy as Sender
 
 key="putyourPassword"
-ipadr=""192.168.1.254:8080"
+ipadr="192.168.1.254:8080"
 verific=True
+prefix="COPYTODROIDCLIP=:="
 
 win32clipboard.OpenClipboard()
 try:
@@ -16,12 +17,11 @@ win32clipboard.CloseClipboard()
 
 try:
   eg.plugins.EventGhost.ShowOSD(u'{eg.globals.clip}', u'0;-24;0;0;0;700;0;0;0;1;0;0;2;32;Arial', (255, 255, 255), (0, 0, 0), 0, (0, 0), 0, 3.0, False)
-  eg.globals.clip = win32clipboard.GetClipboardData(win32clipboard.CF_UNICODETEXT)
-  clipme=str(eg.globals.clip)
+  clipme=prefix+str(eg.globals.clip)
   Sender.sendmsgENCODED (ipadr,clipme,key,verific)
 except:
-  eg.plugins.EventGhost.ShowOSD(u'ERROR in sending', u'0;-24;0;0;0;700;0;0;0;1;0;0;2;32;Arial', (255, 255, 255), (0, 0, 0), 0, (0, 0), 0, 3.0, False)  pass
-
+  eg.plugins.EventGhost.ShowOSD(u'ERROR in sending', u'0;-24;0;0;0;700;0;0;0;1;0;0;2;32;Arial', (255, 255, 255), (0, 0, 0), 0, (0, 0), 0, 3.0, False) 
+  pass
 
 
 ##############################################################################
