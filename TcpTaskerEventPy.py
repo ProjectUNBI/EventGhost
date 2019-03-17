@@ -9,7 +9,7 @@ from Crypto import Random
 from Crypto.Cipher import AES
 
 
-# Here is the AESCipher classe
+# Here is the AESCipher classes
 class AESCipher(object):
 
     def __init__(self, key):
@@ -58,8 +58,8 @@ Here is the message encryption sending function
 def sendmsgENCODED(ipadress,message,key=None,verification=None):
     """
     ipadress is "192.168.1.222:8888" change it according to your configuration
-    message is the essage to send
-    key is the password. if you set it the message will encrypted with Aes 128
+    message is the message to send
+    key is the password. if you set it, the message will encrypted with Aes 128
     verification can be True or False. if True it will append a time base id at the end
     of the message before encryption;
     eg if we send message "hello world" and verification is True
