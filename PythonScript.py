@@ -27,7 +27,6 @@ except:
 
 #copy to android from PC
 
-import win32clipboard
 import TcpTaskerEventPy as Sender
 
 key="putyourPassword"
